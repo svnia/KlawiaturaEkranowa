@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>KlawiaturkaEkranowa</title>
+</head>
+<body>
+    <script>
+        function es(){}
+        function abc(charA, charZ) {
+            var ssak = [], x = charA.charCodeAt(0), y = charZ.charCodeAt(0);
+            for(;x <= y; ++x) {
+                ssak.push(String.fromCharCode(x));
+            }
+            return ssak;
+        }
+        let a = abc('A', 'Z');
+        for (let i = 0; i < a.length; i++){
+            let b = document.createElement('button');
+            b.innerHTML = a[i];
+            b.addEventListener('click', es)
+            document.body.appendChild(b)
+        }
+        function es(argument)
+        {
+            console.log(argument.srcElement.innerHTML);
+        }
+        
+    </script>
+</body>
+</html>
